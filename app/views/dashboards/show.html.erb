@@ -1,0 +1,8 @@
+Dashboard
+
+<%= form_for  @text_shout do |form| %>
+	<%= form.text_field :body, placeholder: 'Shout content here' %>
+	<%= form.submit 'Shout!' %>
+	<% end %>
+
+<%= render @shouts %>
