@@ -7,7 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <%= form_for(:search, url: search_path, method: :get) do |form| %>
+    <%= form.text_field:term %>
+    <%= form.submit "Search " %>
+  <% end %>
 	<div>
 		<% if signed_in? %>
 			<%= link_to current_user.username, dashboard_path %>
@@ -19,6 +22,9 @@
 	</div>
 	<% if alert %>
 		<p><%= alert %></p>
+	<% end %>
+  <% if notice %>
+		<p><%= notice %></p>
 	<% end %>
 
 <%= yield %>
